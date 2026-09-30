@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090c">
+  <meta name="description" content="Sihana Fathima's first-year computer science journey: learning, building, and exploring.">
+  <title>Sihana Fathima | The Beginning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <section class="intro" id="intro" aria-label="Cinematic introduction">
+    <div class="intro-black" aria-hidden="true"></div>
+    <p class="opening-line">Every journey starts somewhere.</p>
+    <div class="studio-scene" aria-hidden="true">
+      <div class="room-light room-light--rose"></div>
+      <div class="room-light room-light--blue"></div>
+      <div class="desk-scene">
+        <div class="monitor"><div class="monitor-code"><i></i><i></i><i></i><i></i></div></div>
+        <div class="desk-surface"></div>
+        <div class="notebook"></div>
+        <div class="desk-lamp"><i></i></div>
+      </div>
+      <div class="student-silhouette">
+        <div class="student-head"></div><div class="student-body"></div>
+      </div>
+      <video class="intro-character-video" id="intro-character-video" muted playsinline loop preload="none" aria-hidden="true" hidden></video>
+      <div class="floor-shadow"></div>
+    </div>
+    <div class="intro-copy" aria-live="polite">
+      <p class="dialogue dialogue--one">Hi, I am Sihana Fathima.</p>
+      <p class="dialogue dialogue--two">Let's see my First-Year, First-Semester journey.</p>
+    </div>
+    <div class="intro-title" aria-hidden="true">
+      <p class="eyebrow">A first-year story</p>
+      <p class="intro-name">SIHANA FATHIMA</p>
+      <p class="intro-role">FIRST-YEAR B.Sc. COMPUTER SCIENCE STUDENT</p>
+      <p class="intro-chapter">FIRST SEMESTER — THE JOURNEY SO FAR</p>
+    </div>
+    <button class="intro-skip" id="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+    <span class="intro-progress" aria-hidden="true"></span>
+  </section>
+
+  <header class="site-header" id="site-header">
+    <a class="wordmark" href="#home" aria-label="Sihana Fathima, home">SF<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#certificates">Certificates</a>
+      <a href="#beyond">Experience</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+      <span></span><span></span>
+    </button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#home">Home <span>01</span></a><a href="#about">About <span>02</span></a>
+      <a href="#skills">Skills <span>03</span></a><a href="#projects">Projects <span>04</span></a>
+      <a href="#journey">Journey <span>05</span></a><a href="#certificates">Certificates <span>06</span></a>
+      <a href="#beyond">Experience <span>07</span></a><a href="#resume">Resume <span>08</span></a>
+      <a href="#contact">Contact <span>09</span></a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+      <div class="hero-orbit" aria-hidden="true"><span></span><span></span><span></span><b>01 / 09</b></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A beginning in computer science</p>
+        <h1 id="hero-title">Sihana<br><em>Fathima</em><span class="period">.</span></h1>
+        <p class="hero-role">FIRST-YEAR B.Sc. COMPUTER SCIENCE STUDENT</p>
+        <p class="hero-note">Learning. Building. Exploring.</p>
+        <div class="hero-actions">
+          <a class="button button--light" href="#journey">Explore my journey <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#projects">View projects <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#resume">View resume <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-label="Abstract study desk at night">
+        <div class="hero-art-frame">
+          <div class="hero-window"><i></i><i></i><i></i><span>learning / in progress</span><div class="window-lines"><b></b><b></b><b></b><b></b><b></b></div></div>
+          <div class="hero-desk"></div><div class="hero-book"></div><div class="hero-cup"></div>
+          <div class="hero-art-caption"><span>FIG. 01</span><span>A STUDY IN BEGINNINGS</span></div>
+        </div>
+        <span class="hero-side-note">POLLACHI, TAMIL NADU · INDIA</span>
+      </div>
+      <a class="scroll-cue" href="#about"><span></span> Scroll to begin</a>
+    </section>
+
+    <section class="section section-about" id="about" aria-labelledby="about-title">
+      <div class="section-shell">
+        <div class="section-heading reveal"><p class="eyebrow">01 — The person behind the screen</p><h2 id="about-title">A curious mind,<br><em>at the beginning.</em></h2></div>
+        <div class="about-layout">
+          <div class="about-copy reveal"><p class="lead-copy">I am a first-year Computer Science student finding my footing in a field full of possibility.</p><p>Motivated and enthusiastic, I am building a foundation in C, C++, Python and web development while learning JavaScript and AWS. I am developing practical skills through academic projects, ongoing web development internship training, certifications and technical activities. I am eager to learn new technologies, gain practical experience and contribute to meaningful projects.</p><p class="about-location"><span class="status-point"></span> Based in Pollachi, Tamil Nadu</p></div>
+          <div class="education-block reveal"><span class="chapter-number">01 <i></i> NOW</span><p class="eyebrow">My academic chapter</p><h3>B.Sc.<br>Computer Science</h3><p>Sri Krishna College of Arts and Science<br>Coimbatore</p><div class="education-status"><span>FIRST YEAR</span><span>CURRENTLY PURSUING</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-skills" id="skills" aria-labelledby="skills-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading--row reveal"><div><p class="eyebrow">02 — Tools of the trade</p><h2 id="skills-title">Foundations,<br><em>in progress.</em></h2></div><p class="section-aside">A growing toolkit, built one<br>new idea at a time.</p></div>
+        <div class="skill-list" id="skill-list"></div>
+      </div>
+    </section>
+
+    <section class="section section-projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-shell">
+        <div class="section-heading reveal"><p class="eyebrow">03 — Experiments & coursework</p><h2 id="projects-title">Things I have<br><em>started building.</em></h2><p class="heading-note">Early work, honest questions, and ideas taking shape.</p></div>
+        <div class="project-list" id="project-list"></div>
+      </div>
+    </section>
+
+    <section class="section section-journey" id="journey" aria-labelledby="journey-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading--row reveal"><div><p class="eyebrow">04 — First year, first semester</p><h2 id="journey-title">My first-year<br><em>journey.</em></h2></div><p class="section-aside">Not a finished story.<br>A record of what comes next.</p></div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section section-certificates" id="certificates" aria-labelledby="certificates-title">
+      <div class="section-shell">
+        <div class="section-heading reveal"><p class="eyebrow">05 — Learning beyond lectures</p><h2 id="certificates-title">A few things<br><em>I have explored.</em></h2><p class="heading-note">Seven certificates, each a small invitation to learn something new.</p></div>
+        <div class="certificate-grid" id="certificate-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-beyond" id="beyond" aria-labelledby="beyond-title">
+      <div class="section-shell">
+        <div class="section-heading reveal"><p class="eyebrow">06 — Making things by hand</p><h2 id="beyond-title">Beyond<br><em>computer science.</em></h2><p class="heading-note">Creativity has its own kind of problem-solving.</p></div>
+        <div class="craft-grid" id="craft-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-activities" id="activities" aria-labelledby="activities-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading--row reveal"><div><p class="eyebrow">07 — Outside the classroom</p><h2 id="activities-title">Show up.<br><em>Try something.</em></h2></div><p class="section-aside">Learning happens in rooms<br>without a whiteboard, too.</p></div>
+        <div class="activity-list" id="activity-list"></div>
+      </div>
+    </section>
+
+    <section class="section section-training" id="training" aria-labelledby="training-title">
+      <div class="section-shell training-layout">
+        <div class="section-heading reveal"><p class="eyebrow">08 — Growing through practice</p><h2 id="training-title">Training &<br><em>experience.</em></h2></div>
+        <article class="training-entry reveal"><span class="training-badge"><i></i> ONGOING</span><p class="eyebrow">Web development internship training</p><h3>Learning the building blocks<br>of the web.</h3><p>Currently undergoing web development internship training with a focus on web development fundamentals, HTML, CSS and JavaScript.</p><span class="training-footnote">IN PROGRESS · NOT COMPLETED</span></article>
+      </div>
+    </section>
+
+    <section class="section section-resume" id="resume" aria-labelledby="resume-title">
+      <div class="section-shell resume-layout reveal">
+        <div><p class="eyebrow">09 — A little more detail</p><h2 id="resume-title">My<br><em>resume.</em></h2><p class="resume-subtitle">Everything I've learned, built and explored so far.</p></div>
+        <div class="resume-actions"><button class="button button--light" type="button" data-resume-open>View resume <span aria-hidden="true">↗</span></button><a class="button button--outline" id="resume-download" href="public/assets/resume/Sihana-Fathima-Resume.pdf" download aria-disabled="true">Download resume <span aria-hidden="true">↓</span></a><p class="resume-availability" id="resume-availability" role="status">Resume PDF not added yet.</p></div>
+      </div>
+      <div class="resume-orbit" aria-hidden="true">SF</div>
+    </section>
+
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-shell contact-layout">
+        <div class="contact-intro reveal"><p class="eyebrow">A new page, whenever you're ready</p><h2 id="contact-title">Let's build<br><em>something.</em></h2><p>Still learning. Still building. Still exploring.</p></div>
+        <div class="contact-links reveal"><a href="mailto:sihanafathimaak@gmail.com"><span>Email</span><b>sihanafathimaak@gmail.com</b><i aria-hidden="true">↗</i></a><a href="tel:+917695941589"><span>Phone</span><b>+91 76959 41589</b><i aria-hidden="true">↗</i></a><a href="https://github.com/sihanafathimaak-rgb" target="_blank" rel="noopener noreferrer"><span>GitHub</span><b>github.com/sihanafathimaak-rgb</b><i aria-hidden="true">↗</i></a><a href="https://linkedin.com/in/sihana-fathima-a-k" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><b>linkedin.com/in/sihana-fathima-a-k</b><i aria-hidden="true">↗</i></a></div>
+      </div>
+    </section>
+
+    <section class="finale" id="finale" aria-label="Closing credits">
+      <div class="finale-stars" aria-hidden="true"></div>
+      <div class="finale-copy"><p class="finale-thought finale-thought--one">Still learning.</p><p class="finale-thought finale-thought--two">Still building.</p><p class="finale-thought finale-thought--three">Still becoming.</p><p class="finale-name">SIHANA FATHIMA</p><p class="finale-role">FIRST-YEAR B.Sc. COMPUTER SCIENCE</p><div class="finale-links"><a href="https://github.com/sihanafathimaak-rgb" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://linkedin.com/in/sihana-fathima-a-k" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:sihanafathimaak@gmail.com">Email</a></div></div>
+      <a class="back-to-top" href="#home">Back to the beginning <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>SIHANA FATHIMA</span><span>A FIRST-YEAR STORY · POLLACHI, INDIA</span><a href="#home">Back to top ↑</a></footer>
+
+  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close project details">×</button>
+    <div class="detail-art" id="detail-art" aria-hidden="true"></div><div class="detail-content"><p class="eyebrow" id="detail-kicker"></p><h2 id="detail-title"></h2><p id="detail-description"></p><p class="detail-meta" id="detail-meta"></p></div>
+  </dialog>
+
+  <dialog class="certificate-dialog" id="certificate-dialog" aria-labelledby="certificate-dialog-title">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="Close certificate details">×</button>
+    <div class="certificate-preview" aria-hidden="true"><span>LEARNING RECORD</span><i>✳</i><b>SF</b><small>CERTIFICATE REFERENCE</small></div>
+    <div class="certificate-preview-copy"><p class="eyebrow" id="certificate-dialog-number"></p><h2 id="certificate-dialog-title"></h2><p id="certificate-dialog-org"></p><p id="certificate-dialog-date"></p><p class="placeholder-note">Certificate image not provided. This is a text-only reference, not a certificate reproduction.</p></div>
+  </dialog>
+
+  <dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-dialog-title">
+    <div class="resume-dialog-head"><div><p class="eyebrow">Document viewer</p><h2 id="resume-dialog-title">My resume</h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close resume viewer">×</button></div>
+    <div class="resume-frame-wrap"><iframe id="resume-frame" title="Complete resume PDF" hidden></iframe><div class="resume-missing" id="resume-missing"><span class="missing-mark">PDF</span><h3>The resume file isn't here yet.</h3><p>This viewer is ready for the actual PDF. Add it at <code>public/assets/resume/Sihana-Fathima-Resume.pdf</code> to enable full-document viewing and download.</p></div></div>
+    <div class="resume-dialog-foot"><span id="resume-dialog-status">Waiting for the resume PDF.</span><a id="resume-dialog-download" href="public/assets/resume/Sihana-Fathima-Resume.pdf" download aria-disabled="true">Download PDF ↓</a></div>
+  </dialog>
+</body>
+</html>

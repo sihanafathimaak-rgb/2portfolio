@@ -98,11 +98,11 @@ function finishIntro() {
   introFinished = true;
   intro.classList.add("is-leaving");
   header.classList.add("is-visible");
-  window.setTimeout(() => { intro.hidden = true; }, 1100);
+  window.setTimeout(() => { intro.hidden = true; }, 1300);
 }
 
 document.querySelector("#intro-skip").addEventListener("click", finishIntro);
-window.setTimeout(finishIntro, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 1400 : 14000);
+window.setTimeout(finishIntro, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 1400 : 18400);
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && characterVideoAvailable) {
     const video = document.querySelector("#intro-character-video");

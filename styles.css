@@ -39,9 +39,11 @@ button { cursor: pointer; }
 .intro-black { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 68%, rgba(101, 81, 99, .12), transparent 58%), #060609; animation: black-breathe 8s ease-in-out both; }
 .opening-line { position: absolute; z-index: 2; top: 46%; margin: 0; color: #efebeb; font-family: var(--display); font-size: clamp(24px, 4vw, 48px); letter-spacing: .12em; opacity: 0; filter: blur(9px); animation: opening-words 3.25s 1s both; }
 .studio-scene { position: absolute; inset: 0; opacity: 0; overflow: hidden; background: radial-gradient(ellipse at 56% 50%, rgba(30, 28, 36, .25), transparent 58%); animation: scene-arrive 3s 3.45s both; }
+.camera-frame { position: absolute; inset: -5%; transform: scale(1.035); animation: camera-push 12s 3.45s cubic-bezier(.18,.64,.28,1) both; will-change: transform; }
 .room-light { position: absolute; width: 52vw; height: 40vh; filter: blur(95px); opacity: .22; }
-.room-light--rose { left: 13%; bottom: 12%; background: #9f5368; transform: rotate(-22deg); }
-.room-light--blue { right: 4%; top: 9%; background: #435a78; transform: rotate(25deg); }
+.room-light--rose { left: 13%; bottom: 12%; background: #9f5368; animation: rose-light-drift 10s 3.5s ease-in-out infinite alternate; }
+.room-light--blue { right: 4%; top: 9%; background: #435a78; animation: blue-light-drift 12s 4s ease-in-out infinite alternate; }
+.desk-parallax { position: absolute; inset: 0; animation: desk-parallax 10s 4s cubic-bezier(.3,.1,.2,1) both; }
 .desk-scene { position: absolute; left: 7%; right: 12%; bottom: 20%; height: 34%; }
 .monitor { position: absolute; right: 19%; bottom: 6%; width: min(36vw, 420px); height: 76%; border: 8px solid #19191e; border-bottom-width: 13px; border-radius: 5px; background: radial-gradient(ellipse at 50% 40%, rgba(123, 140, 161, .23), transparent 70%), #111219; box-shadow: 0 0 75px rgba(106, 132, 169, .13); }
 .monitor::after { content: ""; position: absolute; left: 45%; bottom: -26px; height: 17px; width: 10%; background: #29282d; }
@@ -52,8 +54,12 @@ button { cursor: pointer; }
 .desk-lamp { position: absolute; left: 9%; bottom: 9%; width: 22%; height: 74%; border-left: 2px solid #5a515a; transform: skew(-18deg); }
 .desk-lamp::before { content: ""; position: absolute; width: 34%; height: 28%; top: 6%; left: -11%; border-radius: 50% 50% 3px 3px; background: #343038; box-shadow: 0 12px 50px rgba(217, 154, 163, .3); }
 .desk-lamp i { position: absolute; width: 60%; height: 2px; top: 31%; left: -4%; background: #554c55; transform: rotate(26deg); }
-.student-silhouette { position: absolute; left: 44%; bottom: 13%; width: 20%; height: 70%; transform: translateY(22px); opacity: 0; animation: student-arrive 3.2s 6.3s both; }
-.student-silhouette img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; filter: brightness(.76) saturate(.82); mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 91%, transparent); }
+.student-silhouette { position: absolute; left: 50%; bottom: 3%; width: clamp(260px, 28vw, 390px); aspect-ratio: 2 / 3; opacity: 0; animation: student-arrive 4.1s 6.3s cubic-bezier(.2,.72,.22,1) both; filter: drop-shadow(0 20px 42px rgba(0,0,0,.38)); will-change: transform, opacity; }
+.student-silhouette img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.82) saturate(.9); mix-blend-mode: lighten; mask-image: radial-gradient(ellipse 78% 76% at 50% 48%, #000 55%, transparent 100%); }
+.scene-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.scene-particles::before, .scene-particles::after { position: absolute; inset: -15%; content: ""; background-repeat: repeat; opacity: 0; }
+.scene-particles::before { background-image: radial-gradient(circle, rgba(247,220,205,.55) 0 1px, transparent 2px), radial-gradient(circle, rgba(222,164,179,.48) 0 1px, transparent 2px); background-position: 0 0, 48px 63px; background-size: 137px 173px, 191px 137px; animation: particles-float 14s 4s ease-in-out infinite alternate; }
+.scene-particles::after { background-image: radial-gradient(circle, rgba(185,202,216,.5) 0 1px, transparent 2px), radial-gradient(circle, rgba(250,229,214,.38) 0 1px, transparent 2px); background-position: 23px 41px, 76px 9px; background-size: 211px 181px, 157px 223px; animation: particles-float 17s 5s ease-in-out infinite alternate-reverse; }
 .student-head { position: absolute; z-index: 2; top: 5%; left: 32%; width: 38%; height: 38%; border-radius: 48% 48% 44% 44%; background: linear-gradient(110deg, #19181e, #353039 60%, #17161b); box-shadow: inset -8px 2px 16px rgba(216, 139, 156, .12); }
 .student-head::before { content: ""; position: absolute; inset: -12% -18% -18%; border-radius: 48% 48% 42% 42%; border: 1px solid rgba(211, 183, 185, .1); background: linear-gradient(105deg, #1a191e 20%, #2c2830 70%, #18171c); z-index: -1; }
 .student-body { position: absolute; bottom: 0; left: 12%; width: 75%; height: 64%; border-radius: 46% 46% 0 0; background: linear-gradient(105deg, #151419 20%, #26232b 52%, #121116); }
@@ -63,17 +69,17 @@ button { cursor: pointer; }
 .floor-shadow { position: absolute; bottom: -9%; left: 28%; width: 53%; height: 19%; border-radius: 50%; background: #000; filter: blur(28px); }
 .intro-copy { position: absolute; z-index: 3; left: var(--gutter); bottom: 15%; }
 .dialogue { max-width: 780px; margin: 0; font-family: var(--display); font-size: clamp(25px, 4.4vw, 53px); letter-spacing: .015em; opacity: 0; filter: blur(9px); transform: translateY(13px); }
-.dialogue--one { animation: dialogue-in 1.3s 7.4s both, dialogue-out .7s 8.4s both; }
-.dialogue--two { position: absolute; top: 0; left: 0; width: min(78vw, 860px); animation: dialogue-in 1.3s 9.2s both, dialogue-out .7s 10.7s both; }
-.intro-title { position: absolute; z-index: 4; left: var(--gutter); bottom: 12%; opacity: 0; animation: title-in 2s 11.5s both; }
+.dialogue--one { animation: dialogue-in 1.2s 10.5s both, dialogue-out .65s 12.1s both; }
+.dialogue--two { position: absolute; top: 0; left: 0; width: min(78vw, 860px); animation: dialogue-in 1.2s 13s both, dialogue-out .7s 14.65s both; }
+.intro-title { position: absolute; z-index: 4; left: var(--gutter); bottom: 12%; opacity: 0; animation: title-in 1.8s 15.6s both; }
 .intro-title .eyebrow { margin-bottom: 12px; }
 .intro-name { margin: 0; font-size: clamp(30px, 5vw, 66px); line-height: 1.15; letter-spacing: .02em; }
 .intro-role, .intro-chapter { color: #d3cdd0; font: 10px var(--mono); letter-spacing: .13em; }
 .intro-chapter { color: var(--rose-bright); }
 .intro-skip { position: absolute; z-index: 8; right: var(--gutter); bottom: 32px; border: 0; padding: 10px 0 10px 14px; background: none; color: #d2ccd0; font: 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
 .intro-skip span { padding-left: 10px; color: var(--rose-bright); }
-.intro-progress { position: absolute; z-index: 7; bottom: 0; left: 0; width: 100%; height: 2px; transform: scaleX(0); transform-origin: left; background: var(--rose); animation: progress-line 14s linear both; }
-.intro.is-leaving { animation: intro-depart 1s both; pointer-events: none; }
+.intro-progress { position: absolute; z-index: 7; bottom: 0; left: 0; width: 100%; height: 2px; transform: scaleX(0); transform-origin: left; background: var(--rose); animation: progress-line 18.4s linear both; }
+.intro.is-leaving { animation: intro-depart 1.2s both; pointer-events: none; }
 .intro.is-leaving .intro-skip { opacity: 0; }
 
 .site-header { position: fixed; z-index: 40; top: 0; left: 0; right: 0; height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); border-bottom: 1px solid transparent; background: rgba(9, 9, 12, .8); backdrop-filter: blur(16px); transform: translateY(-110%); opacity: 0; transition: transform .7s cubic-bezier(.2,.8,.2,1), opacity .7s, border-color .3s; }
@@ -146,12 +152,17 @@ h1, h2, h3, p { margin-top: 0; }
 @keyframes black-breathe { 0%,100% { opacity: 1; } 40%,80% { opacity: .62; } }
 @keyframes opening-words { 0% { opacity: 0; filter: blur(9px); letter-spacing: .12em; } 25%,62% { opacity: 1; filter: blur(0); letter-spacing: .04em; } 100% { opacity: 0; filter: blur(5px); letter-spacing: .15em; } }
 @keyframes scene-arrive { from { opacity: 0; transform: scale(1.05); } to { opacity: 1; transform: scale(1); } }
-@keyframes student-arrive { 0% { opacity: 0; transform: translate(13px,28px) scale(.87); } 24% { opacity: .7; transform: translate(9px,22px) scale(.9); } 46% { opacity: 1; transform: translate(5px,14px) scale(.94); } 68% { transform: translate(2px,6px) scale(.98); } 100% { opacity: 1; transform: translate(0,0) scale(1); } }
+@keyframes camera-push { from { transform: scale(1.02) translate3d(0,0,0); } to { transform: scale(1.12) translate3d(-.7%,-.5%,0); } }
+@keyframes rose-light-drift { from { opacity: .14; transform: translate3d(-2%,1%,0) rotate(-22deg); } to { opacity: .26; transform: translate3d(2%,-1%,0) rotate(-16deg); } }
+@keyframes blue-light-drift { from { opacity: .12; transform: translate3d(2%,0,0) rotate(25deg); } to { opacity: .24; transform: translate3d(-2%,1%,0) rotate(19deg); } }
+@keyframes desk-parallax { from { transform: translate3d(0,12px,0); } 48% { transform: translate3d(0,-5px,0); } to { transform: translate3d(0,2px,0); } }
+@keyframes particles-float { from { opacity: 0; transform: translate3d(0,1%,0); } 25% { opacity: .12; } to { opacity: .22; transform: translate3d(-1%,-2%,0); } }
+@keyframes student-arrive { 0% { opacity: 0; transform: translate3d(-50%,5%,0) scale(.82); filter: blur(1.2px) drop-shadow(0 20px 42px rgba(0,0,0,.38)); } 24% { opacity: .78; transform: translate3d(-50%,2.5%,0) scale(.9); } 70% { opacity: 1; transform: translate3d(-50%,0,0) scale(1.045); filter: blur(0) drop-shadow(0 20px 42px rgba(0,0,0,.38)); } 100% { opacity: 1; transform: translate3d(-50%,0,0) scale(1.02); filter: blur(0) drop-shadow(0 20px 42px rgba(0,0,0,.38)); } }
 @keyframes dialogue-in { to { opacity: 1; filter: blur(0); transform: translateY(0); } }
 @keyframes dialogue-out { to { opacity: 0; filter: blur(6px); transform: translateY(-8px); } }
 @keyframes title-in { to { opacity: 1; } }
 @keyframes progress-line { to { transform: scaleX(1); } }
-@keyframes intro-depart { to { opacity: 0; visibility: hidden; } }
+@keyframes intro-depart { to { opacity: 0; visibility: hidden; transform: scale(1.035); filter: blur(3px); } }
 @keyframes cue-line { 0%,100% { transform: scaleX(.65); transform-origin: left; } 50% { transform: scaleX(1); } }
 @keyframes status-pulse { 0%,100% { box-shadow: 0 0 6px var(--rose); } 50% { box-shadow: 0 0 13px var(--rose); } }
 @keyframes final-thought { 0% { opacity: 0; filter: blur(8px); transform: translateY(12px); } 22%,67% { opacity: 1; filter: blur(0); transform: translateY(0); } 100% { opacity: 0; filter: blur(6px); transform: translateY(-9px); } }
@@ -179,7 +190,7 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 560px) {
   html { scroll-padding-top: 70px; }
   body { font-size: 14px; }
-  .opening-line { width: 90%; text-align: center; }.studio-scene { background-position: center; }.desk-scene { left: 0; right: 0; bottom: 16%; transform: scale(.83); transform-origin: bottom center; }.monitor { right: 14%; width: 56vw; }.student-silhouette { left: 37%; width: 32%; height: 58%; }.intro-copy { bottom: 17%; }.dialogue { font-size: clamp(23px, 6.4vw, 32px); }.dialogue--two { width: 88vw; }.intro-title { bottom: 17%; }.intro-name { font-size: clamp(28px, 9vw, 42px); }.intro-role, .intro-chapter { font-size: 7px; line-height: 1.8; }.intro-skip { bottom: 20px; right: 18px; }
+  .opening-line { width: 90%; text-align: center; }.studio-scene { background-position: center; }.camera-frame { inset: -4%; }.desk-scene { left: 0; right: 0; bottom: 16%; transform: scale(.83); transform-origin: bottom center; }.monitor { right: 14%; width: 56vw; }.student-silhouette { left: 50%; bottom: 5%; width: min(86vw, 320px); }.intro-copy { bottom: 17%; }.dialogue { font-size: clamp(23px, 6.4vw, 32px); }.dialogue--two { width: 88vw; }.intro-title { bottom: 17%; }.intro-name { font-size: clamp(28px, 9vw, 42px); }.intro-role, .intro-chapter { font-size: 7px; line-height: 1.8; }.intro-skip { bottom: 20px; right: 18px; }
   .hero { padding-top: 128px; }.hero h1 { font-size: clamp(70px, 18vw, 94px); }.hero-role { max-width: 260px; font-size: 8px; line-height: 1.8; }.hero-actions { align-items: flex-start; gap: 12px 18px; }.hero-actions .button { flex-basis: 100%; width: max-content; }.hero-actions .text-link { font-size: 9px; }.hero-art { width: 88%; }.hero-orbit { top: 46%; right: 8%; width: 83px; }.hero-side-note { font-size: 7px; }
   .section { padding-block: 88px; }.section-heading { margin-bottom: 37px; }.section-heading h2, .contact-intro h2 { font-size: clamp(48px, 13vw, 70px); }.section-heading--row { align-items: flex-start; flex-direction: column; gap: 18px; }.section-aside { text-align: left; }.about-copy { font-size: 12px; }.about-copy .lead-copy { font-size: 25px; }.education-block { padding: 27px 22px; }.education-block h3 { font-size: 39px; }.chapter-number { top: 27px; right: 22px; }
   .skill-row { position: relative; grid-template-columns: 31px 1fr 18px; gap: 9px 12px; padding: 21px 0; }.skill-row h3 { font-size: 19px; }.skill-row ul { grid-column: 2 / 4; gap: 7px 14px; }.skill-row li { font-size: 10px; }.row-arrow { grid-column: 3; grid-row: 1; }
@@ -198,4 +209,13 @@ h1, h2, h3, p { margin-top: 0; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
   .cursor-dot { display: none; }
+  .intro .opening-line { top: 6%; width: 90%; opacity: 1; filter: none; animation: none; text-align: center; }
+  .intro .studio-scene { opacity: 1; animation: none; }
+  .intro .camera-frame, .intro .desk-parallax { transform: none; animation: none; }
+  .intro .room-light, .intro .scene-particles::before, .intro .scene-particles::after { animation: none; }
+  .intro .student-silhouette { top: 34%; bottom: auto; left: 50%; width: auto; height: 39vh; aspect-ratio: 2 / 3; opacity: 1; transform: translateX(-50%); animation: none; }
+  .intro .intro-copy { bottom: 5%; }
+  .intro .dialogue--one, .intro .dialogue--two { position: relative; width: auto; opacity: 1; filter: none; transform: none; animation: none; }
+  .intro .intro-title { top: 16%; bottom: auto; opacity: 1; animation: none; }
+  .intro .intro-progress { transform: scaleX(1); animation: none; }
 }
